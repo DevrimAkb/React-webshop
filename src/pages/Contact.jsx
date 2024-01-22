@@ -1,16 +1,11 @@
 import React from 'react'
-import { Form } from 'react-router-dom'
+import { Form } from '../components/Form'
 
 function Contact() {
   return (
-    <div className='form-wrapper'>
-        <div className="left">
-            <h1>Contact us!</h1>
-        </div>  
-        <div className="right">
+        <div className="form-container">
             <Form />
         </div>  
-    </div>
   )
 }
 

@@ -1,3 +1,7 @@
+:root {
+    --clr-main: rgb(226, 73, 73);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -103,4 +107,29 @@ body {
 }
 .log-in-btn:hover {
     background-color: rgb(74, 22, 22);
+}
+.form-container {
+    height: 100svh;
+    /* display: grid;
+    grid-template-columns: 1fr auto; */
+    margin: auto;
+}
+.form-container {
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.contact-form {
+    background-color: bisque;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 1rem;
+}
+.form-label, .form-control {
+    display: block;
+    width: 100%;
 }
