@@ -9,7 +9,6 @@ export const Form = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         try {
             const res = await axios.post('https://js2-ecommerce-api.vercel.app/api/messages', {
                 name,

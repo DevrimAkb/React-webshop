@@ -121,9 +121,11 @@ body {
     padding: 1rem;
 }
 .contact-form {
-    background-color: lightgray;
+    background-color: #ffffff;
     width: 100%;
     border-radius: .5rem;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 6px gray;
 }
 .form-group {
     margin-bottom: 1rem;
@@ -140,12 +142,15 @@ body {
     height: 10rem;
     resize: none;
 }
+.invalid-input {
+    color: firebrick;
+}
 .contact-send-btn {
     width: 100%;
-    background-color: darkslategray;
+    background-color: var(--clr-main);
     border: none;
     border-radius: .3rem;
     padding: .5em;
-    margin-bottom: .5rem;
     cursor: pointer;
+    color: #fff;
 }
