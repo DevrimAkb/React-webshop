@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useFormik } from "formik";
 import { FormInput } from './FormInput'
-import { contactFormSchema } from '../../lib/Schemas';
+import { contactFormSchema } from '../../lib/ContactSchemas';
 import axios from 'axios'
 
 
