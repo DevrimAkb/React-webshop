@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFormik } from "formik";
 import { FormInput } from './FormInput'
 import { contactFormSchema } from '../../lib/Schemas';
+import axios from 'axios'
 
 
 export const Form = () => {
@@ -13,8 +14,15 @@ export const Form = () => {
       message: ''
     },
     validationSchema: contactFormSchema,
-    onSubmit: (values) => {
-      console.log(values)
+    onSubmit: async (values) => {
+      try {
+        const res = await axios.post('https://js2-ecommerce-api.vercel.app/api/messages', values)
+        console.log(res.data)
+        form.resetForm()
+      }
+      catch (error) {
+        console.error('Error din bäh', error)
+      }
     }
   })
 
