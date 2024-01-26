@@ -1,12 +1,15 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { store } from '../store'
 
-// Lektion 8 timestamp: 30:40
 
 const Providers = ({ children }) => {
   return (
-    <div>
-        { children }
-    </div>
+    <>
+        <Provider store={store}>
+            { children }
+        </Provider>
+    </>
   )
 }
 
