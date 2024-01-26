@@ -38,6 +38,9 @@ body {
 .nav-link.active {
     text-decoration: underline;
 }
+.nav-cart {
+    cursor: pointer;
+}
 .shop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
