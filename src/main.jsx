@@ -5,10 +5,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout.jsx'
 import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
-import ProductDetail from './pages/ProductDetails.jsx'
 import Shop from './pages/Shop.jsx'
 import NotFound from './pages/NotFound.jsx'
 import LogIn from './pages/LogIn.jsx'
+import ProductDetails from './pages/ProductDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
             element: <Contact />
           },
           {
-            path: "productdetail/:id",
-            element: <ProductDetail />
+            path: "productDetails/:id",
+            element: <ProductDetails />
           },
           {
             path: "shop",

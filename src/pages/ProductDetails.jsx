@@ -6,17 +6,22 @@ function ProductDetails() {
 
     const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     const { id } = useParams()
 
      useEffect(() => {
         setLoading(true)
 
-
-         const getProduct = async () => {
-           const res = await axios.get(`https://js2-ecommerce-api.vercel.app/api/products/${id}`)
-           setProduct(res.data)
-           setLoading(false)
-         }
+        const getProduct = async () => {
+        try {
+          const res = await axios.get(`https://js2-ecommerce-api.vercel.app/api/products/${id}`)
+          setProduct(res.data)
+          setLoading(false)
+        } catch (error) {
+          setError('Something went wrong')
+          console.log(err.message)
+        }
+      }
          getProduct()
        }, [])
   return (
@@ -33,7 +38,7 @@ function ProductDetails() {
                 <img src={product.images[2]} alt={product.images}/>
                 <img src={product.images[3]} alt={product.images}/>
                 </div>
-                { product?.name}
+                {product?.name}
                 
             </div>
         )

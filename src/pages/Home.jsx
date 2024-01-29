@@ -20,6 +20,7 @@ function Home() {
   )
   return (
     <div>
+      <ProductList.Skeleton />
       <ProductList products={products} />
     </div>
   )
