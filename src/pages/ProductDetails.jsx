@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { MdAddShoppingCart } from "react-icons/md";
 
 function ProductDetails() {
 
@@ -8,6 +9,8 @@ function ProductDetails() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const { id } = useParams()
+
+    // const [activeImg, setActiveImg] = useState(0)
 
      useEffect(() => {
         setLoading(true)
@@ -33,16 +36,28 @@ function ProductDetails() {
                 <div className="image-container__details">
                     <img src={product.images[0]} alt={product.images}/>
                 </div>
-                <div className="small-image-container__details">
-                <img src={product.images[1]} alt={product.images}/>
-                <img src={product.images[2]} alt={product.images}/>
-                <img src={product.images[3]} alt={product.images}/>
+                <div className="details-description">
+                  <h1>{ product.name }</h1>
+                  <p>{ product.description}</p>
+                  <div className="details-price">
+                  <p>Price: {product.price}</p>
+                  <button className="cart-btn">Add to cart 
+                  <MdAddShoppingCart />
+                  </button>
+                  </div>
+
                 </div>
-                {product?.name}
-                
             </div>
+            
         )
     }
+                    {/* <div className="small-image-container__details">
+                  {product.images.map((image, index) => (
+                    <div key={index} onClick={() => setActiveImg(index)}>
+                      <img src={image} alt="images" />
+                    </div>
+                  ))}
+                </div> */}
     </div>
  
   )

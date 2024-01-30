@@ -20,8 +20,11 @@ function Home() {
   )
   return (
     <div>
-      <ProductList.Skeleton />
-      <ProductList products={products} />
+      {
+        loading
+        ? <ProductList.Skeleton />
+        : <ProductList products={products} />
+      }
     </div>
   )
 }

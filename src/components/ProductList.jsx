@@ -13,8 +13,9 @@ export const ProductList = ({ products }) => {
 
 ProductList.Skeleton = () => {
     return (
-        <div>
-            hdsfjsdh
+        <div className="shop">
+            <div className="skeleton">test</div>
+            <div className="skeleton"></div>
         </div>
     )
 }

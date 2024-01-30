@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --clr-main: rgb(226, 73, 73);
 }
@@ -90,11 +94,27 @@ body {
     }
 }
 
-.details__container {
-    width: 200px;
+.details {
+    width: 100%;
+    display: flex;
+    /* flex: 1; */
+    margin-top: 1rem;
+}
+.details-description {
+    width: 50%;
+    margin-top: 5rem;
+}
+.details h1 {
+    font-size: 2rem;
 }
 .image-container__details img {
-    width: 30rem;
+    width: 100%;
+}
+.small-image-container__details {
+    /* width: 50%;
+    margin-left: 4rem; */
+    display: flex;
+    margin-left: 4rem;
 }
 .small-image-container__details img {
     width: 10rem;
@@ -158,4 +178,31 @@ body {
     padding: .5em;
     cursor: pointer;
     color: #fff;
+}
+.skeleton {
+    background-color: lightgray;
+    border-radius: .5rem;
+    opacity: 50%;
+    width: 200px;
+}
+
+.details-price {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+.cart-btn {
+    background-color: rgb(226, 73, 73);
+    /* margin-left: 5rem; */
+    /* margin-top: 5px; */
+    border-radius: .3rem;
+    padding: .4em;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    &&:hover {
+        background-color: rgb(131, 37, 37);
+    }
 }

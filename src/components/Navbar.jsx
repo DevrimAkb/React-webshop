@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
+import { DropDown } from './DropDown';
 
 export const Navbar = () => {
   return (
@@ -14,7 +15,13 @@ export const Navbar = () => {
                 <li><NavLink to="/login" className='nav-link'>
                     <button className="log-in-btn">Log in</button>
                 </NavLink></li>
-                <li><NavLink to='#' className='nav-link nav-cart'><FaShoppingCart /></NavLink></li>
+                <li>
+                    <DropDown>
+                        <NavLink to='#' className='nav-link nav-cart'><FaShoppingCart /></NavLink>
+                    </DropDown>
+                </li>
+
+
             </ul>
         </div>
     </nav>
