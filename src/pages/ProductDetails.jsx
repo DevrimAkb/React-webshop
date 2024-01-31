@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { MdAddShoppingCart } from "react-icons/md";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/features/shoppingCart/ShoppingCartSlice';
 
 function ProductDetails() {
 
@@ -9,6 +11,7 @@ function ProductDetails() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const { id } = useParams()
+    const dispatch = useDispatch()
 
     // const [activeImg, setActiveImg] = useState(0)
 
@@ -27,6 +30,10 @@ function ProductDetails() {
       }
          getProduct()
        }, [])
+
+       const handleClick = () => {
+        dispatch(addToCart(product))
+       }
   return (
     <div>
     { loading && <p>Loading..</p>}
@@ -41,7 +48,7 @@ function ProductDetails() {
                   <p>{ product.description}</p>
                   <div className="details-price">
                   <p>Price: {product.price}</p>
-                  <button className="cart-btn">Add to cart 
+                  <button onClick={handleClick} className="cart-btn">Add to cart 
                   <MdAddShoppingCart />
                   </button>
                   </div>

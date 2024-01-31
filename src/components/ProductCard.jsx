@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const ProductCard = ({ product }) => {
-    console.log(product._id)
   return (
     <div className='product'>
         <div className="image-container">
