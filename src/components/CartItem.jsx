@@ -2,8 +2,25 @@ import React from 'react'
 import { FaTrash } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { removeOne, addToCart, removeItem } from '../store/features/shoppingCart/ShoppingCartSlice';
 
 export const CartItem = ({ item }) => {
+
+  const dispatch = useDispatch()
+
+  const removeOneFromCart = () => {
+    dispatch(removeOne(item.product._id))
+  }
+
+  const addOneToCart = () => {
+    dispatch(addToCart(item.product))
+  }
+
+  const deleteProduct = () => {
+    dispatch(removeItem(item.product._id))
+  }
+
   return (
     <div className="flex justify-between items-center p-2">
         <div className="flex items-center">
@@ -15,10 +32,10 @@ export const CartItem = ({ item }) => {
         </div>
         <div className="flex gap-4">
             <div className="flex gap-0.5">
-            <button className="bg-slate-500 text-white p-1 rounded-s-md hover:bg-slate-800"><FaMinus /></button>
-            <button className="bg-slate-500 text-white p-1 rounded-e-md hover:bg-slate-800"><FaPlus /></button>
+            <button onClick={removeOneFromCart} className="bg-slate-500 text-white p-1 rounded-s-md hover:bg-slate-800"><FaMinus /></button>
+            <button onClick={addOneToCart} className="bg-slate-500 text-white p-1 rounded-e-md hover:bg-slate-800"><FaPlus /></button>
             </div>
-                <button className="p-1 group"><FaTrash className="text-red-500 group-hover:text-red-700" /></button>
+                <button onClick={deleteProduct} className="p-1 group"><FaTrash className="text-red-500 group-hover:text-red-700" /></button>
         </div>
     </div>
   )

@@ -2,8 +2,11 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import { DropDown } from './DropDown';
+import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
+
+    const { totalQuantity } = useSelector(state => state.shoppingCart)
   return (
     <nav className='navbar'>
         <div className="container">
@@ -15,9 +18,12 @@ export const Navbar = () => {
                 <li><NavLink to="/login" className='nav-link'>
                     <button className="log-in-btn">Log in</button>
                 </NavLink></li>
-                <li>
+                <li className="relative">
+                    { totalQuantity > 0 && <div className="absolute right-0 bg-red-800 text-white w-4 h-4 flex items-center justify-center rounded-full z-10">
+                        <p className="text-xs">{ totalQuantity }</p>
+                    </div>}
                     <DropDown>
-                        <NavLink to='#' className='nav-link nav-cart'><FaShoppingCart /></NavLink>
+                        <FaShoppingCart className="text-white cursor-pointer"/>
                     </DropDown>
                 </li>
 
