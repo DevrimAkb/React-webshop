@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { useFormik } from "formik";
 import { FormInput } from './FormInput'
 import { contactFormSchema } from '../../lib/ContactSchemas';
+import { CiCircleCheck } from "react-icons/ci";
 import axios from 'axios'
 
 
 export const Form = () => {
+
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
 
   const form = useFormik({
     initialValues: {
@@ -18,17 +21,22 @@ export const Form = () => {
       try {
         const res = await axios.post('https://js2-ecommerce-api.vercel.app/api/messages', values)
         console.log(res.data)
+        setIsFormSubmitted(true)
         form.resetForm()
       }
       catch (error) {
-        console.error('Error din bäh', error)
+        console.error('Something went wrong', error)
       }
     }
   })
 
 
   return (
-    <form onSubmit={form.handleSubmit} className='contact-form' noValidate>
+
+    <div>
+    {/* Show success message if form is submitted successfully */}
+    
+    <form onSubmit={form.handleSubmit} className='contact-form form-container' noValidate>
         <FormInput
             label="Name"
             id="name"
@@ -60,8 +68,11 @@ export const Form = () => {
             onBlur={form.handleBlur}
         />
 
+        {isFormSubmitted && <div className="success-msg">Form submitted successfully!</div>}
+
         <button type="submit" className="btn contact-send-btn">Send</button>
     </form>
+    </div>
   )
 }
 

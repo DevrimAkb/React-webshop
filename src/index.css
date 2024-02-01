@@ -53,7 +53,7 @@ body {
     margin-top: 2rem;
 }
 .product {
-    border: 1px solid #8f8383;
+    border: 1px solid lightgray;
     padding: 1rem;
 }
 .product-name {
@@ -139,14 +139,16 @@ body {
     margin: auto;
 }
 .form-container {
-    width: 35rem;
+    width: 60%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 1rem;
+    height: 35rem;
 }
 .contact-form {
     background-color: #ffffff;
-    width: 100%;
+    width: 30rem;
     border-radius: .5rem;
     border: 1px solid gray;
     box-shadow: 3px 3px 6px gray;
@@ -162,10 +164,17 @@ body {
     width: 100%;
     height: 2rem;
 }
+.form-control {
+    border: 1px solid black
+}
 #message {
     width: 100%;
     height: 10rem;
     resize: none;
+}
+.success-msg {
+    color: rgb(21, 162, 21);
+    font-size: large;
 }
 .invalid-input {
     color: firebrick;
