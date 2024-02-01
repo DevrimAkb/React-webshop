@@ -1,6 +1,7 @@
 import React from 'react'
 import { CartItem } from './CartItem'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 export const ShoppingCart = () => {
 
@@ -9,14 +10,14 @@ export const ShoppingCart = () => {
 
   return (
     <div className="text-black">
-        <div>
+        <div className="border-bottom">
             { cart.length < 1 && (
                 <div className="p-2 text-center">
                     <p>Your cart is empty</p>
                 </div>
             )}
-            { cart.map(item => (
-                <CartItem item={item} />
+            { cart.map((item, index) => (
+                <CartItem key={index} item={item} />
             ))}
         </div>
         <hr className="border-black-600"/>

@@ -9,6 +9,7 @@ import Shop from './pages/Shop.jsx'
 import NotFound from './pages/NotFound.jsx'
 import LogIn from './pages/LogIn.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
+import CheckOutPage from './pages/CheckOutPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
           {
             path: "login",
             element: <LogIn />
+          },
+          {
+            path: "checkout",
+            element: <CheckOutPage />
           },
           {
             path: "*",
