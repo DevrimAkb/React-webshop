@@ -22,7 +22,7 @@ export const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="flex justify-between items-center p-2">
+    <div className="flex justify-between items-center p-2 border-b-2">
         <div className="flex items-center">
             <img src={item.product.images[0]} alt="product" className="w-20" />
             <div>

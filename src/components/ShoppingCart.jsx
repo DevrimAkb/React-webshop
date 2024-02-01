@@ -10,7 +10,7 @@ export const ShoppingCart = () => {
 
   return (
     <div className="text-black">
-        <div className="border-bottom">
+        <div className="">
             { cart.length < 1 && (
                 <div className="p-2 text-center">
                     <p>Your cart is empty</p>
