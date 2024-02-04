@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useFormik } from "formik";
 import { FormInput } from './FormInput'
 import { contactFormSchema } from '../../lib/ContactSchemas';
-import { CiCircleCheck } from "react-icons/ci";
 import axios from 'axios'
 
 
