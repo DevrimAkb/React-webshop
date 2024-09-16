@@ -11,19 +11,22 @@ function Home() {
     dispatch(getProducts())
   }, [])
 
-  const { products, loading, error} = useSelector(state => state.productList)
+  const { products, loading, error } = useSelector(state => state.productList)
 
-  if(error) return (
+  if (error) return (
     <div>
       <p>{error}</p>
     </div>
   )
   return (
     <div>
+      <div className='header'>
+        <img src="/banner.jpg" alt="banner" />
+      </div>
       {
         loading
-        ? <ProductList.Skeleton />
-        : <ProductList products={products} />
+          ? <ProductList.Skeleton />
+          : <ProductList products={products} />
       }
     </div>
   )
