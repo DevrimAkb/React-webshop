@@ -61,7 +61,7 @@ function ProductDetails() {
               <p>{product.description}</p>
               <div className="details-price">
                 <p>Pris: {product.price} :-</p>
-                <button onClick={handleClick} className="cart-btn">Add to cart
+                <button onClick={handleClick} className="cart-btn">Lägg i varukorg
                   <MdAddShoppingCart />
                 </button>
               </div>
@@ -71,8 +71,10 @@ function ProductDetails() {
 
         )
       }
-      <h2 className="related-products">Relaterade produkter</h2>
-      <ProductList products={relatedProducts} />
+      <div className="related-products_list">
+        <h2 className="related-products">Relaterade produkter</h2>
+        <ProductList products={relatedProducts} />
+      </div>
       {/* <div className="small-image-container__details">
                   {product.images.map((image, index) => (
                     <div key={index} onClick={() => setActiveImg(index)}>

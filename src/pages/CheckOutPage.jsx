@@ -31,9 +31,9 @@ import axios from 'axios'
   }
 
    return (
-     <div>
+     <div className="checkout-page_cart">
          <ShoppingCart />
-         <button onClick={purchase} className="bg-red-500 text-white py-1 px-5 rounded-lg">Buy</button>
+         <button onClick={purchase} className="bg-red-500 text-white py-1 px-5 rounded-lg relative left-1">Köp</button>
      </div>
    )
  }

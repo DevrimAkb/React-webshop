@@ -12,7 +12,7 @@ export const ShoppingCart = () => {
       <div className="">
         {cart.length < 1 && (
           <div className="p-2 text-center">
-            <p>Your cart is empty</p>
+            <p>Din varukorg är tom</p>
           </div>
         )}
         {cart.map((item, index) => (
@@ -21,7 +21,7 @@ export const ShoppingCart = () => {
       </div>
       <hr className="border-black-600" />
       <div className="flex justify-between items-center p-2">
-        <p>Total: {totalPrice}</p>
+        <p>Totalt: {totalPrice}</p>
         <div className="flex gap-4">
           {location.pathname !== '/checkout' && (
             <Link to="/checkout" className="bg-red-500 text-white py-1 px-5 rounded-lg hover:bg-red-700">
