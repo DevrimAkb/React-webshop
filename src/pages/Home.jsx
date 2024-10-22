@@ -21,7 +21,13 @@ function Home() {
   return (
     <div>
       <div className='header'>
+        <h2 className='header-title'>Osannolikt kraftfull</h2>
+        <div className="text-container">
+          <p className="header-text">Upplev iPhone 15 Pro med obegränsad surf.</p>
+        </div>
+        <p className="header-price">699 kr/mån</p>
         <img src="/banner.jpg" alt="banner" />
+        <button className='header-btn text-2xl absolute top-96 left-80'>Köp nu</button>
       </div>
       {
         loading
